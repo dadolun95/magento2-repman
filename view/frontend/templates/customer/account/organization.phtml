@@ -1,0 +1,25 @@
+<?php
+/**
+ * @package     Dadolun_Repman
+ * @copyright   Copyright (c) 2023 Dadolun (https://www.dadolun.com)
+ * @license     This code is licensed under MIT LICENSE (see LICENSE for details)
+ */
+
+use Magento\Framework\Escaper;
+use Dadolun\Repman\ViewModel\CustomerAccountData;
+
+/** @var Escaper $escaper */
+/** @var CustomerAccountData $repmanOrganization */
+$repmanOrganization = $block->getData("repman_organization");
+$organizationToken = $repmanOrganization->getOrganizationToken();
+?>
+<?php if ($organizationToken): ?>
+    <div class="field token">
+        <label class="label" for="organization_token">
+            <?= __("Repman Organization token"); ?>
+        </label>
+        <div class="control">
+            <?= $escaper->escapeHtmlAttr(__($repmanOrganization->getOrganizationToken())); ?>
+        </div>
+    </div>
+<?php endif; ?>

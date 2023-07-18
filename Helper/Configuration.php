@@ -16,7 +16,7 @@ use Magento\Framework\Serialize\Serializer\Json;
 
 /**
  * Class Configuration
- * @package Dadolun\Repman\Helper
+ * @package Dadolun\SibOrderSync\Helper
  */
 class Configuration extends AbstractHelper
 {

@@ -87,7 +87,7 @@ class ApiToken extends Value
         $value = (string)$this->getValue();
         try {
             /**
-             * @var RestApiClient $restApiClient
+             * @var RestApiClient $sibClient
              */
             $this->restApiClient->authorizeClient($value);
             $response = $this->json->unserialize($this->restApiClient->getOrganization());
