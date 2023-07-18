@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @package     Dadolun_Repman
+ * @copyright   Copyright (c) 2023 Dadolun (https://www.dadolun.com)
+ * @license     This code is licensed under MIT LICENSE (see LICENSE for details)
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="dadolun" translate="label" sortOrder="10">
+            <label>Dadolun</label>
+        </tab>
+        <section id="dadolun_repman" translate="label" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Repman</label>
+            <tab>dadolun</tab>
+            <resource>Dadolun_Repman::repman</resource>
+            <group id="repman" translate="label" type="text" sortOrder="0" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Integration management</label>
+                <field id="enable" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Enable Repman integration</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="api_token" translate="label, comment" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Repman REST API token</label>
+                    <comment><![CDATA[Set repman REST API token. See REST API documentation <a href="https://repman.io/docs/api/">here</a>.]]></comment>
+                    <backend_model>Dadolun\Repman\Model\Config\Backend\ApiToken</backend_model>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+                <field id="api_token_status" translate="label,comment" type="select" sortOrder="2" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Repman Api key check passed</label>
+                    <comment>Enable integration and insert a valid REST API key above</comment>
+                    <frontend_model>Dadolun\Repman\Block\Adminhtml\Config\ApiKeyStatus</frontend_model>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="main_organization" translate="label" type="text" sortOrder="3" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Main Repman organization URL</label>
+                    <frontend_class>required-entry</frontend_class>
+                    <comment>Main organization URL, never assigned to customers, containing all your packages. See "Settings" tab on your organization into Repman dashboard.</comment>
+                    <depends>
+                        <field id="enabled">1</field>
+                        <field id="api_token_status">1</field>
+                    </depends>
+                </field>
+                <field id="organization_prefix" translate="label" type="text" sortOrder="4" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>New organizations prefix</label>
+                    <frontend_class>required-entry</frontend_class>
+                    <comment>Prefix for auto-generated organizations on repman (each customer with repman downloadable products will receive a dedicated organization on repman.io)</comment>
+                    <depends>
+                        <field id="enabled">1</field>
+                        <field id="api_token_status">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

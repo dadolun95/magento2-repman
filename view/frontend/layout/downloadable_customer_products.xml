@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @package     Dadolun_Repman
+ * @copyright   Copyright (c) 2023 Dadolun (https://www.dadolun.com)
+ * @license     This code is licensed under MIT LICENSE (see LICENSE for details)
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="downloadable_customer_products_list">
+            <action method="setTemplate" ifconfig="dadolun_repman/repman/enable">
+                <argument name="template" xsi:type="string">Dadolun_Repman::downloadable/customer/product/list.phtml</argument>
+            </action>
+            <arguments>
+                <argument name="repmanData" xsi:type="object">Dadolun\Repman\ViewModel\PurchasedDownloadRepmanData</argument>
+            </arguments>
+        </referenceBlock>
+    </body>
+</page>

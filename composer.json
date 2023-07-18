@@ -1,0 +1,28 @@
+{
+    "name": "95dadolun/magento2-repman",
+    "description": "Magento2 Repman package subscription management module",
+    "type": "magento2-module",
+    "version": "1.0.0",
+    "require": {
+        "ext-curl": "*"
+    },
+    "license": [
+        "MIT"
+    ],
+    "authors": [
+        {
+            "name": "Davide Lunardon",
+            "email": "dadolun@gmail.com",
+            "homepage": "https://www.dadolun.com",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Dadolun\\Repman\\": ""
+        }
+    }
+}

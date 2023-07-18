@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @package     Dadolun_Repman
+ * @copyright   Copyright (c) 2023 Dadolun (https://www.dadolun.com)
+ * @license     This code is licensed under MIT LICENSE (see LICENSE for details)
+ */
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="downloadable_link_purchased">
+        <column xsi:type="varchar" name="repman_uid" nullable="true" length="255" comment="Repman Customer Organization Package UID"/>
+        <column xsi:type="timestamp" name="repman_subscription_end" on_update="false" nullable="true" comment="Repman Package Subscription end"/>
+        <column xsi:type="longtext" name="repman_package_installation" nullable="true" comment="Repman Package Installation Instructions"/>
+    </table>
+</schema>
