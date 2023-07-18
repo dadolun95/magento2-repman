@@ -5,6 +5,7 @@
 ## Features
 Syncronization functionality for Repman - Magento2 integration.
 This module integrates your Magento2 site with Repman allowing you to supply your magento module's directly from your e-commerce.
+In order to supply modules from you e-commerce as downloadable products, make public or private repositories containing magento2 modules (https://repman.io/docs/private-packages/), add it on your repman main organization and configure magento2 with this module.
 
 ## Compatibility
 Fully tested and working on Magento CE(EE) 2.4.4, 2.4.5, 2.4.6
