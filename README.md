@@ -33,7 +33,7 @@ After Token verification you'll be able to add your main repman organization uri
 
 Create your downloadable products adding repman informations:
 - Repository name
-- Repository Subscription end expression (empty for unlimited updates, strtotime string expression for limited subcription time ex: "+1 year")
+- Repository Subscription end expression (empty for unlimited updates, strtotime string expression for limited subscription time ex: "+1 year")
 - Repository Type
 - Installation instructions (optional, will be added as INSTALL.txt file into zipped module download)
 ![image](https://github.com/dadolun95/magento2-repman/assets/8927461/abab29e1-9022-4867-a9ac-e9c33bbf3e89)
@@ -42,6 +42,7 @@ Create your downloadable products adding repman informations:
 
 Each customer will be now able to see each downloadable purchased package on his account after purchase and successfull invoicing of the order
 ![image](https://github.com/dadolun95/magento2-repman/assets/8927461/1e2ce9f4-3e89-429e-b1f6-65c5fe8c2bf9)
+And his auto-generated organization token on repman on "Account Information" section.
 The download link will give a zip file to the customer containing all module versions zipped and a INSTALL.txt file filled with data contained into product "Installation instructions" attribute.
 
 
